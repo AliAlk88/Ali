@@ -1,0 +1,28 @@
+{
+  "name": "ali-brain-telegram-bot",
+  "version": "2.0.0",
+  "description": "ALI BRAIN CLOUD SYNC - Telegram Trading Bot with Smart Analysis",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js",
+    "test": "echo \"No tests yet\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AliAlk88/Ali.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/AliAlk88/Ali/issues"
+  },
+  "homepage": "https://github.com/AliAlk88/Ali#readme",
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "node-fetch": "^3.3.2",
+    "telegraf": "^4.16.3"
+  }
+}
