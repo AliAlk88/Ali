@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "name": "ali-brain-telegram-bot",
   "builds": [
     {
       "src": "api/**/*.js",
@@ -24,10 +23,5 @@
       "src": "/api/set-webhook",
       "dest": "/api/set-webhook.js"
     }
-  ],
-  "env": {
-    "BOT_TOKEN": "@bot_token",
-    "SUPABASE_URL": "@supabase_url",
-    "SUPABASE_ANON_KEY": "@supabase_anon_key"
-  }
+  ]
 }
