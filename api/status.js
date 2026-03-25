@@ -9,7 +9,7 @@ const { getRecentAnalyses, getPriceHistory } = require('../lib/supabase');
 /**
  * Vercel Serverless Function Handler
  */
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   if (req.method !== 'GET') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
@@ -34,7 +34,7 @@ export default async function handler(req, res) {
         timestamp: lastAnalysis.timestamp
       } : null,
       stats: {
-        priceHistoryCount: priceService.priceHistory.length,
+        priceHistoryCount: Object.keys(priceService.priceHistory).length,
         analysisHistoryCount: marketAnalysis.analysisHistory.length,
         dbAnalysisCount: recentAnalyses.length,
         dbPriceHistoryCount: priceHistory.length
@@ -47,4 +47,4 @@ export default async function handler(req, res) {
       error: error.message
     });
   }
-}
+};

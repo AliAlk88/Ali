@@ -10,7 +10,7 @@ const { saveAnalysis, savePriceHistory } = require('../lib/supabase');
 /**
  * Vercel Serverless Function Handler
  */
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   // السماح بـ GET و POST
   if (!['GET', 'POST'].includes(req.method)) {
     return res.status(405).json({ error: 'Method not allowed' });
@@ -18,8 +18,8 @@ export default async function handler(req, res) {
 
   try {
     // جلب بيانات السوق
-    const btc = await priceService.getBtcPrice();
-    const sp500 = await priceService.getSp500Price();
+    const btc = await priceService.getCryptoPrice('BTC');
+    const sp500 = await priceService.getIndexPrice('SPX');
 
     // تحليل السوق
     const analysis = await marketAnalysis.analyze();
@@ -50,4 +50,4 @@ export default async function handler(req, res) {
       timestamp: new Date().toISOString()
     });
   }
-}
+};
