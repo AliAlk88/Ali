@@ -4,7 +4,6 @@
  */
 
 const { Telegraf } = require('telegraf');
-const config = require('../config');
 const { handleCommand, handleMessage } = require('../lib/bot');
 
 // إنشاء البوت
@@ -16,7 +15,8 @@ if (!botToken) {
 
 const bot = new Telegraf(botToken);
 
-// تسجيل معالجات الأوامر
+// ========== معالجات الأوامر ==========
+
 bot.command('start', async (ctx) => {
   const response = await handleCommand('start', ctx.from.id);
   await ctx.reply(response.text, { parse_mode: response.parse_mode });
@@ -41,6 +41,22 @@ bot.command('price', async (ctx) => {
 
 bot.command('signal', async (ctx) => {
   const response = await handleCommand('signal', ctx.from.id);
+  await ctx.reply(response.text, { parse_mode: response.parse_mode });
+});
+
+bot.command('platforms', async (ctx) => {
+  const response = await handleCommand('platforms', ctx.from.id);
+  await ctx.reply(response.text, { parse_mode: response.parse_mode });
+});
+
+bot.command('opportunities', async (ctx) => {
+  await ctx.reply('🔍 جاري البحث عن الفرص...');
+  const response = await handleCommand('opportunities', ctx.from.id);
+  await ctx.reply(response.text, { parse_mode: response.parse_mode });
+});
+
+bot.command('watchlist', async (ctx) => {
+  const response = await handleCommand('watchlist', ctx.from.id);
   await ctx.reply(response.text, { parse_mode: response.parse_mode });
 });
 

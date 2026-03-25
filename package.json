@@ -1,7 +1,7 @@
 {
   "name": "ali-brain-telegram-bot",
-  "version": "2.1.0",
-  "description": "ALI BRAIN CLOUD SYNC - Telegram Trading Bot with Smart Analysis",
+  "version": "3.0.0",
+  "description": "ALI BRAIN CLOUD SYNC - Smart Telegram Trading Bot with Platforms & Opportunities",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",

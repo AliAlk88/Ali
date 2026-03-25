@@ -1,172 +1,162 @@
 # ALI BRAIN CLOUD SYNC 🤖
 
-**Telegram Trading Bot with Smart Analysis**
-
-## ✅ تم إصلاح مشكلة HOLD!
-
-الآن البوت يعطي إشارات حقيقية وديناميكية بناءً على تحليل فني متعدد المؤشرات.
+**بوت تلغرام ذكي للتداول مع تحليل متقدم وعرض المنصات والفرص**
 
 ---
 
-## 🚀 الاستضافة على Vercel + Supabase
+## 🆕 الميزات الجديدة v3.0
 
-### 📋 المتطلبات:
+### 🏦 عرض منصات التداول الموصى بها
 
-1. حساب [Vercel](https://vercel.com)
-2. مشروع [Supabase](https://supabase.com)
-3. بوت Telegram من [@BotFather](https://t.me/BotFather)
+| المنصة | النوع | المميزات |
+|--------|-------|----------|
+| 🟡 **Binance** | Crypto | أكبر منصة، رسوم منخفضة |
+| 🔵 **Coinbase** | Crypto | سهلة للمبتدئين، آمنة |
+| 🟠 **Bybit** | Crypto | Derivatives، Copy Trading |
+| 📗 **eToro** | Stocks | Copy Trading، سهل |
+| 📘 **Interactive Brokers** | Stocks | احترافي، كل الأسواق |
+| 🔶 **OANDA** | Forex | فوركس محترف، تنظيم قوي |
 
----
+### 📊 الأصول المدعومة
 
-## 📝 خطوات الإعداد:
+**Cryptocurrencies:**
+- ₿ Bitcoin (BTC)
+- Ξ Ethereum (ETH)
+- 🔶 BNB
+- ◎ Solana (SOL)
+- ✕ Ripple (XRP)
+- Ð Dogecoin (DOGE)
 
-### 1️⃣ إعداد Supabase
+**Stocks:**
+- 🍎 Apple (AAPL)
+- 🚗 Tesla (TSLA)
+- 💚 NVIDIA (NVDA)
+- 💻 Microsoft (MSFT)
+- 🔍 Google (GOOGL)
+- 📦 Amazon (AMZN)
 
-1. أنشئ مشروع جديد في [Supabase](https://supabase.com)
-2. اذهب إلى **SQL Editor**
-3. انسخ والصق محتوى ملف `supabase-schema.sql`
-4. اضغط **Run** لإنشاء الجداول
-5. انسخ من **Settings > API**:
-   - `Project URL` → SUPABASE_URL
-   - `anon public key` → SUPABASE_ANON_KEY
+### 🎯 فرص التداول الذكية
 
-### 2️⃣ إعداد Vercel
-
-1. اذهب إلى [Vercel](https://vercel.com)
-2. اضغط **New Project**
-3. اختر **Import Git Repository**
-4. اختر مستودع `AliAlk88/Ali`
-5. أضف Environment Variables:
-
-```
-BOT_TOKEN=your_telegram_bot_token
-SUPABASE_URL=https://your-project.supabase.co
-SUPABASE_ANON_KEY=your_supabase_anon_key
-```
-
-6. اضغط **Deploy**
-
-### 3️⃣ تفعيل Webhook
-
-بعد النشر، افتح الرابط:
-```
-https://your-app.vercel.app/api/set-webhook
-```
-
-ستظهر رسالة نجاح تعني أن البوت جاهز!
-
-### 4️⃣ إعداد UptimeRobot (اختياري)
-
-1. اذهب إلى [UptimeRobot](https://uptimerobot.com)
-2. أضف Monitor جديد:
-   - Type: HTTP(s)
-   - URL: `https://your-app.vercel.app/api/analyze`
-   - Interval: 5 minutes
-
-هذا يضمن تحديث البيانات بشكل منتظم.
+البوت يبحث تلقائياً عن:
+- 🟢 فرص الشراء (عند الانخفاض الحاد)
+- 🔴 فرص البيع (عند الارتفاع الحاد)
+- أفضل الأصول للتداول الآن
 
 ---
 
-## 📁 هيكل المشروع:
-
-```
-ali-brain-telegram-bot/
-├── api/                    # Vercel Serverless Functions
-│   ├── webhook.js          # معالج Telegram Webhook
-│   ├── analyze.js          # API تحليل السوق
-│   ├── status.js           # API حالة النظام
-│   └── set-webhook.js      # ضبط الـ Webhook
-├── lib/
-│   ├── supabase.js         # عميل Supabase
-│   └── bot.js              # معالجات البوت
-├── services/
-│   ├── priceService.js     # خدمة الأسعار
-│   └── marketAnalysis.js   # خوارزمية التحليل
-├── index.js                # للتشغيل المحلي
-├── config.js               # الإعدادات
-├── vercel.json             # تكوين Vercel
-├── supabase-schema.sql     # هيكل قاعدة البيانات
-└── package.json
-```
-
----
-
-## 📱 أوامر البوت:
+## 📱 أوامر البوت
 
 | الأمر | الوصف |
 |-------|-------|
 | `/start` | بدء البوت |
-| `/analyze` | تحليل السوق الكامل |
-| `/price` | أسعار العملات الحالية |
+| `/analyze` | تحليل السوق الكامل مع الفرص |
+| `/price` | أسعار العملات والأسهم |
 | `/signal` | إشارة التداول السريعة |
+| `/platforms` | 🆕 عرض منصات التداول الموصى بها |
+| `/opportunities` | 🆕 أفضل فرص البيع والشراء |
+| `/watchlist` | 🆕 قائمة المراقبة الذكية |
 | `/status` | حالة النظام |
 | `/help` | المساعدة |
 
 ---
 
-## 🔧 كيف تعمل خوارزمية التحليل؟
+## 🚀 النشر على Vercel + Supabase
 
-### الإشارات المتاحة:
+### 1️⃣ إعداد Supabase
 
-| الإشارة | الوصف | الشرط |
-|---------|-------|-------|
-| 🚀🟢 **STRONG BUY** | شراء قوي | نقاط ≥ 4 |
-| 🟢 **BUY** | شراء | نقاط 2-3 |
-| 🟡 **WEAK BUY** | ميل للشراء | نقاط 1 |
-| ⏸️ **HOLD** | انتظار | نقاط 0 |
-| 🟠 **WEAK SELL** | ميل للبيع | نقاط -1 |
-| 🔴 **SELL** | بيع | نقاط -2 إلى -3 |
-| 🔻🔴 **STRONG SELL** | بيع قوي | نقاط ≤ -4 |
+```sql
+-- انسخ هذا في SQL Editor
+CREATE TABLE analyses (
+    id BIGSERIAL PRIMARY KEY,
+    signal VARCHAR(50),
+    price DECIMAL(20, 2),
+    confidence INTEGER,
+    created_at TIMESTAMP DEFAULT NOW()
+);
 
-### المؤشرات المستخدمة:
+CREATE TABLE price_history (
+    id BIGSERIAL PRIMARY KEY,
+    symbol VARCHAR(20),
+    price DECIMAL(20, 2),
+    created_at TIMESTAMP DEFAULT NOW()
+);
+```
 
-| المؤشر | الوزن | الاستخدام |
-|--------|-------|-----------|
-| تغير السعر 24h | 30% | انخفاض = شراء، ارتفاع = بيع |
-| RSI | 25% | < 30 = تشبع بيعي، > 70 = تشبع شرائي |
-| الاتجاه | 20% | هابط = شراء، صاعد = بيع |
-| الدعم/المقاومة | 15% | قرب الدعم = شراء، قرب المقاومة = بيع |
-| الزخم | 10% | تعزيز الإشارة |
+### 2️⃣ النشر على Vercel
+
+1. Import Repository: `AliAlk88/Ali`
+2. Add Environment Variables:
+   - `BOT_TOKEN` = توكن البوت من @BotFather
+   - `SUPABASE_URL` = رابط مشروع Supabase
+   - `SUPABASE_ANON_KEY` = مفتاح Supabase
+
+### 3️⃣ تفعيل Webhook
+
+```
+https://your-app.vercel.app/api/set-webhook
+```
+
+### 4️⃣ UptimeRobot
+
+```
+URL: https://your-app.vercel.app/api/analyze
+Interval: 5 minutes
+```
 
 ---
 
-## 🔗 API Endpoints:
+## 📁 هيكل المشروع
 
-| Endpoint | الوصف |
-|----------|-------|
-| `GET /api/webhook` | Webhook للـ Telegram |
-| `GET /api/analyze` | تحليل السوق (لـ UptimeRobot) |
-| `GET /api/status` | حالة النظام |
-| `GET /api/set-webhook` | ضبط الـ Webhook |
+```
+ali-brain-telegram-bot/
+├── api/                    # Vercel Functions
+│   ├── webhook.js          # معالج Telegram
+│   ├── analyze.js          # API التحليل
+│   ├── status.js           # API الحالة
+│   └── set-webhook.js      # ضبط Webhook
+├── lib/
+│   ├── supabase.js         # قاعدة البيانات
+│   └── bot.js              # معالجات البوت
+├── services/
+│   ├── priceService.js     # خدمة الأسعار (متعددة المنصات)
+│   └── marketAnalysis.js   # خوارزمية التحليل
+├── config.js               # الإعدادات (المنصات والأصول)
+├── vercel.json
+└── supabase-schema.sql
+```
 
 ---
 
-## 💻 التشغيل المحلي:
+## 🔧 خوارزمية التحليل
 
-```bash
-# استنساخ المستودع
-git clone https://github.com/AliAlk88/Ali.git
-cd Ali
+### نظام النقاط:
 
-# تثبيت المتطلبات
-npm install
+| المؤشر | وزن | الشرط |
+|--------|-----|-------|
+| تغير السعر | 30% | انخفاض > 3% = +3 شراء |
+| RSI | 25% | RSI < 30 = +3 شراء |
+| الاتجاه | 20% | هابط قوي = +2 شراء |
+| الدعم/المقاومة | 15% | قرب الدعم = +2 شراء |
+| الزخم | 10% | bearish = +1 شراء |
 
-# إنشاء ملف .env
-cp .env.example .env
-# عدّل الملف وأضف التوكنات
+### الإشارات:
 
-# تشغيل Vercel محلياً
-npm run vercel-dev
-
-# أو تشغيل البوت مباشرة
-npm start
+```
+🚀🟢 STRONG BUY  (نقاط ≥ 4)
+🟢 BUY           (نقاط 2-3)
+🟡 WEAK BUY      (نقاط 1)
+⏸️ HOLD          (نقاط 0)
+🟠 WEAK SELL     (نقاط -1)
+🔴 SELL          (نقاط -2 إلى -3)
+🔻🔴 STRONG SELL  (نقاط ≤ -4)
 ```
 
 ---
 
 ## ⚠️ تنبيه
 
-هذا البوت للأغراض التعليمية فقط. **ليس نصيحة مالية**. التداول ينطوي على مخاطر عالية.
+هذا البوت للأغراض التعليمية فقط.
+**ليس نصيحة مالية.** التداول ينطوي على مخاطر عالية.
 
 ---
 
@@ -178,4 +168,4 @@ npm start
 
 ---
 
-*Version 2.1.0 - Vercel + Supabase Edition*
+*Version 3.0.0 - Smart Trading Bot with Platforms & Opportunities*
